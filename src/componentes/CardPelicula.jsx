@@ -1,17 +1,32 @@
 import { useEffect, useState } from "react"
 import { getPeliculas } from "../servicios/getPeliculas";
+import Pagination from '../componentes/Paginacion'
+
 /* https://image.tmdb.org/t/p/original link para el src de la img */
 
 export default function CardPelicula() {
 
   let [peliculas, setPeliculas] = useState({});
+  let [pagina, setPagina] = useState(1);
 
   useEffect(() => {
-    getPeliculas()
+    getPeliculas(pagina)
       .then(
-        peliculas => setPeliculas(peliculas)
+        peliculas => {
+          setPeliculas(peliculas)
+        }
       )
-  }, [])
+  }, [pagina])
+
+  function cambiarPagina( valor ){
+    if(pagina + valor <= 0){
+      /* Aca puede ir un modal o simplemente desactivar el boton */
+      console.log("No hay paginas anteriores")
+    }
+    if(pagina + valor >= 1 && pagina + valor <= 94){
+      setPagina(pagina + valor)
+    }
+  }
 
   return (
     <div className="bg-slate-600">
@@ -50,6 +65,12 @@ export default function CardPelicula() {
             </div>
           ))}
         </div>
+        <Pagination 
+          paginaActual={peliculas.page} 
+          totalPaginas={peliculas.total_pages}
+          totalResultados={peliculas.total_results}
+          cambiarPeliculas={cambiarPagina} 
+        />
       </div>
     </div>
   )
