@@ -1,3 +1,27 @@
 .slick-dots{
     bottom: -2px;
 }
+
+.altura-img{
+    height: 750px;
+}
+
+/* sm: 640px, md: 768px, lg:1024px */
+
+@media (max-width: 1024px){
+    .altura-img{
+        height: 680px;
+    }
+}
+
+@media (max-width: 768px){
+    .altura-img{
+        height: 600px;
+    }
+}
+
+@media (max-width: 640px){
+    .altura-img{
+        height: 500px;
+    }
+}
