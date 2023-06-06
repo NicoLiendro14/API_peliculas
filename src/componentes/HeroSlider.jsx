@@ -9,6 +9,7 @@ export default function HeroSlider() {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: false,
         autoplay: true,
         speed: 3000,
         autoplaySpeed: 4000,
