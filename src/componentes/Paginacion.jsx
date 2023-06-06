@@ -1,7 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 /* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */
 
-export default function Paginacion({ paginaActual, totalPaginas, totalResultados, cambiarPeliculas }) {
+export default function Paginacion({ paginaActual, totalResultados, cambiarPeliculas }) {
 
   let marcado = "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600";
 
@@ -42,19 +42,18 @@ export default function Paginacion({ paginaActual, totalPaginas, totalResultados
             <span
               className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold focus:z-20 ${marcado} cursor-pointer`}
             >
-              {paginaActual}
-            </span>
+              {paginaActual}</span>
             <span
               className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${noMarcado} focus:z-20 cursor-pointer`}
               onClick={() => cambiarPeliculas(+1)}
             >
-              {paginaActual + 1}
+              {paginaActual? paginaActual + 1 : '...'}
             </span>
             <span
               className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${noMarcado} focus:z-20 cursor-pointer`}
               onClick={() => cambiarPeliculas(+2)}
             >
-              {paginaActual + 2}
+              {paginaActual? paginaActual + 2 : '...'}
             </span>
             <span className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${noMarcado} focus:z-20`}>
               ...
@@ -63,19 +62,19 @@ export default function Paginacion({ paginaActual, totalPaginas, totalResultados
               className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${noMarcado} focus:z-20 cursor-pointer`}
               onClick={() => cambiarPeliculas(+7)}
             >
-              {paginaActual + 7}
+              {paginaActual? paginaActual + 7 : '...'}
             </span>
             <span
               className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${noMarcado} focus:z-20 cursor-pointer`}
               onClick={() => cambiarPeliculas(+8)}
             >
-              {paginaActual + 8}
+              {paginaActual? paginaActual + 8 : '...'}
             </span>
             <span
               className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${noMarcado} focus:z-20 cursor-pointer`}
               onClick={() => cambiarPeliculas(+9)}
             >
-              {paginaActual + 9}
+              {paginaActual? paginaActual + 9 : '...'}
             </span>
             <span
               className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0 focus:z-20 cursor-pointer"
