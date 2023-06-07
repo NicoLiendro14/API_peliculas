@@ -49,13 +49,13 @@ export function PeliculasUpcoming () {
 
   return (
       <div className="bg-slate-600">
+        <h2 className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8 text-2xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-3xl lg:text-4xl lg:py-3">Proximos Estrenos</h2>
         <Slider className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8" {...settings}>
           {
             peliculas?
             peliculas.map( (peli) => (
           <div key={peli.id} className="px-3">
-            <h3 className="h-16 flex justify-center items-center" >{peli.title}</h3>
-            <img className="w-64 h-72" src={`https://image.tmdb.org/t/p/original${peli.poster_path}`} alt="img-upcoming" />
+            <img className="w-64 h-72 rounded-sm" src={`https://image.tmdb.org/t/p/original${peli.poster_path}`} alt="img-upcoming" />
           </div>
             ))
             :
