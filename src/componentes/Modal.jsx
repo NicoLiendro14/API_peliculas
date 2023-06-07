@@ -51,15 +51,15 @@ export default function Modal({ abrirModal, setOpen, contenidoPelicula }) {
                     <div className="aspect-h-3 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
                       <img src={`https://image.tmdb.org/t/p/original${contenidoPelicula.poster_path}`} alt={"imageAlt"} className="object-cover object-center" />
                     </div>
-                    <div className="sm:col-span-8 lg:col-span-7">
+                    <div className="sm:col-span-8 lg:col-span-7 px-2">
                       <h2 className="text-2xl font-bold text-gray-900 sm:pr-12 text-center">{contenidoPelicula.original_title}</h2>
-                      <section aria-labelledby="information-heading" className="mt-2">
-                        <div className="flex justify-around">
-                          <p className="text-2xl text-gray-900">{contenidoPelicula.release_date}</p>
-                          <p className="text-2xl text-gray-900">{contenidoPelicula.adult ? "+18" : "ATP"}</p>
+                      <section aria-labelledby="information-heading" className="mt-5">
+                        <div className="flex mt-4 justify-between">
+                          <p className="text-2xl text-gray-900">Estreno:  {contenidoPelicula.release_date}</p>
+                          <p className="text-2xl text-gray-900 pr-12">{contenidoPelicula.adult ? "+18" : "ATP"}</p>
                         </div>
-                        <div className="mt-6">
-                          <div className="flex items-center justify-around">
+                        <div className="mt-4">
+                          <div className="flex items-center justify-between">
                             <div className="flex items-center">
                               {[0, 1, 2, 3, 4].map((rating) => (
                                 <StarIcon
@@ -82,7 +82,7 @@ export default function Modal({ abrirModal, setOpen, contenidoPelicula }) {
                           </div>
                         </div>
                       </section>
-                      <section className="mt-5 px-4">
+                      <section className="mt-7">
                         <p>{contenidoPelicula.overview}</p>
                       </section>
                       <section aria-labelledby="options-heading" className="mt-10">
