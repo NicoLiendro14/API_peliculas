@@ -8,7 +8,7 @@ export default function Paginacion({ paginaActual, totalResultados, cambiarPelic
   let noMarcado = "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0";
 
   return (
-    <div className="flex items-center justify-between bg-white px-4 py-3 mt-6 sm:px-6">
+    <div className="flex items-center justify-between bg-slate-800 px-4 py-3 mt-6 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
         <span
           className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer"

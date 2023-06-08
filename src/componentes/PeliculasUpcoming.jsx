@@ -48,8 +48,8 @@ export function PeliculasUpcoming () {
 
 
   return (
-      <div className="bg-slate-600">
-        <h2 className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8 text-2xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-3xl lg:text-4xl lg:py-3">Proximos Estrenos</h2>
+      <div className="bg-slate-800">
+        <h2 className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8 text-3xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-4xl lg:text-5xl lg:py-3">Proximos Estrenos</h2>
         <Slider className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8" {...settings}>
           {
             peliculas?
