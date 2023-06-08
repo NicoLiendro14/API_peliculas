@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { getPeliculasUpcoming } from "../servicios/getPeliculas";
+import { getPeliculas2 } from "../servicios/getPeliculas";
 
 export function PeliculasUpcoming () {
   let [peliculas, setPeliculas] = useState([])
   
   useEffect( () => {
-    getPeliculasUpcoming().then(
+    getPeliculas2("https://api.themoviedb.org/3/movie/upcoming?api_key=2a765e8f852998a076d69380c3d13494&language=en-US&page=1").then(
       response => setPeliculas(response.results)
     )
   },[])

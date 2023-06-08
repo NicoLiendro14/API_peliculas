@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { getPeliculasTop } from "../servicios/getPeliculas";
+import { getPeliculas2 } from "../servicios/getPeliculas";
 import "./HeroSlider.css"
 
 export default function HeroSlider() {
@@ -20,7 +20,7 @@ export default function HeroSlider() {
     let [peliculasTop, setPeliculasTop] = useState([])
 
     useEffect(() => {
-        getPeliculasTop().then(peliculas => {
+        getPeliculas2("https://api.themoviedb.org/3/movie/top_rated?api_key=2a765e8f852998a076d69380c3d13494&language=en-US&page=1").then(peliculas => {
             setPeliculasTop(peliculas.results.slice(0, 5))
         })
     }, [])

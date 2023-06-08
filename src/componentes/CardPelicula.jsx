@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getPeliculas } from "../servicios/getPeliculas";
+import { getPeliculas2 } from "../servicios/getPeliculas";
 import Pagination from './Paginacion'
 import Modal from './Modal'
 
@@ -11,7 +11,7 @@ export default function CardPelicula() {
   let [peliculaModal, setPeliculaModal] = useState({});
 
   useEffect(() => {
-    getPeliculas(pagina)
+    getPeliculas2(`https://api.themoviedb.org/3/movie/now_playing?api_key=2a765e8f852998a076d69380c3d13494&language=en-US&page=${pagina}`)
       .then(
         peliculas => {
           setPeliculas(peliculas)
