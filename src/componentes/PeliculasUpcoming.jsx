@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { getPeliculas2 } from "../servicios/getPeliculas";
 
-export function PeliculasUpcoming () {
+export function PeliculasUpcoming ( { url, seccion } ) {
   let [peliculas, setPeliculas] = useState([])
   
   useEffect( () => {
-    getPeliculas2("https://api.themoviedb.org/3/movie/upcoming?api_key=2a765e8f852998a076d69380c3d13494&language=en-US&page=1").then(
+    getPeliculas2(url).then(
       response => setPeliculas(response.results)
     )
-  },[])
+  })
 
   const settings = {
     dots: true,
@@ -49,7 +49,7 @@ export function PeliculasUpcoming () {
 
   return (
       <div className="bg-slate-800">
-        <h2 className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8 text-3xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-4xl lg:text-5xl lg:py-3">Proximos Estrenos</h2>
+        <h2 className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8 text-3xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-4xl lg:text-5xl lg:py-3"> {seccion}</h2>
         <Slider className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8" {...settings}>
           {
             peliculas?
