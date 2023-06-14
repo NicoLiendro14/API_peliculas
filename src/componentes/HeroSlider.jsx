@@ -5,10 +5,8 @@ import "./HeroSlider.css"
 
 export default function HeroSlider() {
     let settings = {
-        dots: true,
+        dots: false,
         infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
         arrows: false,
         autoplay: true,
         speed: 3000,
@@ -26,7 +24,7 @@ export default function HeroSlider() {
     }, [])
 
     return (
-        <div className="bg-slate-600">
+        <div className="bg-slate-800">
             <Slider {...settings}>
                 {
                     peliculasTop?
