@@ -3,25 +3,25 @@
 }
 
 .altura-img{
-    height: 750px;
+    height: 590px;
 }
 
 /* sm: 640px, md: 768px, lg:1024px */
 
 @media (max-width: 1024px){
     .altura-img{
-        height: 680px;
+        height: 550px;
     }
 }
 
 @media (max-width: 768px){
     .altura-img{
-        height: 600px;
+        height: 510px;
     }
 }
 
 @media (max-width: 640px){
     .altura-img{
-        height: 500px;
+        height: 460px;
     }
 }
