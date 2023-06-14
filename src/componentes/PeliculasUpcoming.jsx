@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { getPeliculas2 } from "../servicios/getPeliculas";
+import Modal from "./Modal";
 
 export function PeliculasUpcoming ( { url, seccion } ) {
   let [peliculas, setPeliculas] = useState([])
+  let [abrirModal, setAbrirModal] = useState(false)
+  let [modal, setModal] = useState({})
   
   useEffect( () => {
     getPeliculas2(url).then(
@@ -54,7 +57,10 @@ export function PeliculasUpcoming ( { url, seccion } ) {
           {
             peliculas?
             peliculas.map( (peli) => (
-          <div key={peli.id} className="px-3">
+          <div onClick={ () => {
+            setModal(peli)
+            setAbrirModal(true)
+          }} key={peli.id} className="px-3 hover:cursor-pointer hover:opacity-70">
             <img className="w-64 h-72 rounded-sm" src={`https://image.tmdb.org/t/p/original${peli.poster_path}`} alt="img-upcoming" />
           </div>
             ))
@@ -62,6 +68,11 @@ export function PeliculasUpcoming ( { url, seccion } ) {
             <div>Cargando...</div>
           }
         </Slider>
+        <Modal
+              abrirModal={abrirModal}
+              setOpen={setAbrirModal}
+              contenidoPelicula={modal}
+            />
       </div>
     );
 }
