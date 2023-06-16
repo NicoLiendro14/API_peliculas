@@ -15,17 +15,18 @@ export function PeliculasUpcoming ( { url, seccion } ) {
   })
 
   const settings = {
-    dots: false,
+    dots: true,
+    arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 4,
+    slidesToShow: 6,
+    slidesToScroll: 5,
     adaptiveHeight: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1025,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 4,
           infinite: true,
         }
@@ -33,13 +34,19 @@ export function PeliculasUpcoming ( { url, seccion } ) {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 2
+          slidesToShow: 4,
+          slidesToScroll: 4,
         }
       },
       {
         breakpoint: 640,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 520,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2
@@ -51,15 +58,16 @@ export function PeliculasUpcoming ( { url, seccion } ) {
 
   return (
       <div className="bg-slate-800">
-        <h2 className="text-xl mx-auto max-w-2xl sm:px-6 sm:py-2 lg:max-w-7xl lg:px-8 text-slate-50 font-serif font-medium tracking-wide md:py-2 md:text-2xl lg:text-3xl lg:py-2 xl:text-4xl"> {seccion}</h2>
-        <Slider className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-7" {...settings}>
+        <h2 className="text-xl mx-auto px-2 pt-1 sm:px-2 sm:py-1 text-slate-50 font-serif font-medium tracking-wide md:pt-2 md:text-2xl lg:text-3xl lg:pt-4 xl:text-4xl xl:max-w-7xl xl:px-8"> {seccion}</h2>
+        <Slider className="mx-auto px-1 py-1 xl:max-w-7xl xl:px-8" {...settings}>
           {
             peliculas?
             peliculas.map( (peli) => (
           <div onClick={ () => {
             setModal(peli)
             setAbrirModal(true)
-          }} key={peli.id} className="px-3 hover:cursor-pointer hover:opacity-70">
+          }} key={peli.id} 
+            className="px-1 hover:cursor-pointer hover:opacity-70">
             <img className="w-64 h-72 rounded-sm" src={`https://image.tmdb.org/t/p/original${peli.poster_path}`} alt="img-upcoming" />
           </div>
             ))
