@@ -4,7 +4,6 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
-/* Este estilo maneja los botones del hero */
 .slick-dots{
   position: relative;
 }
