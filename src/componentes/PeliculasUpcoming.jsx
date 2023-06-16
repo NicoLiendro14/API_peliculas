@@ -28,11 +28,10 @@ export function PeliculasUpcoming ( { url, seccion } ) {
           slidesToShow: 4,
           slidesToScroll: 4,
           infinite: true,
-          dots: true
         }
       },
       {
-        breakpoint: 750,
+        breakpoint: 768,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -40,7 +39,7 @@ export function PeliculasUpcoming ( { url, seccion } ) {
         }
       },
       {
-        breakpoint: 550,
+        breakpoint: 640,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2
@@ -52,8 +51,8 @@ export function PeliculasUpcoming ( { url, seccion } ) {
 
   return (
       <div className="bg-slate-800">
-        <h2 className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8 text-3xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-4xl lg:text-5xl lg:py-3"> {seccion}</h2>
-        <Slider className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-8" {...settings}>
+        <h2 className="text-xl mx-auto max-w-2xl sm:px-6 sm:py-2 lg:max-w-7xl lg:px-8 text-slate-50 font-serif font-medium tracking-wide md:py-2 md:text-2xl lg:text-3xl lg:py-2 xl:text-4xl"> {seccion}</h2>
+        <Slider className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-3 lg:max-w-7xl lg:px-7" {...settings}>
           {
             peliculas?
             peliculas.map( (peli) => (
