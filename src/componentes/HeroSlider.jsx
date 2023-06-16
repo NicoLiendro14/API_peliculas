@@ -5,7 +5,7 @@ import "./HeroSlider.css"
 
 export default function HeroSlider() {
     let settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         arrows: false,
         autoplay: true,
