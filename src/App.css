@@ -16,3 +16,7 @@
 .slick-prev {
   left: 4px;
 }
+
+.slick-dots li button:before {
+  color: white;
+}
