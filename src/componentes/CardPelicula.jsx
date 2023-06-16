@@ -32,8 +32,8 @@ export default function CardPelicula() {
   return (
     <div className="bg-slate-800">
       <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-15 lg:max-w-7xl lg:px-8">
-        <p className="text-3xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-4xl lg:text-5xl lg:py-3">Peliculas favoritas</p>
-        <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
+        <p className="text-xl text-slate-50 font-serif font-medium tracking-wide pb-1 md:text-2xl lg:text-3xl lg:py-3 xl:text-4xl">Peliculas favoritas</p>
+        <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-7">
           {peliculas.results?.map((pelicula) => (
             <div key={pelicula.id} className="group relative" onClick={() => {
               setPeliculaModal(pelicula)
@@ -43,19 +43,19 @@ export default function CardPelicula() {
                 <img
                   src={`https://image.tmdb.org/t/p/original${pelicula.poster_path}`}
                   alt={"movie"}
-                  className="h-full w-full object-fill object-center lg:h-full lg:w-full"
+                  className="sm:h-80 h-full w-full object-fill object-center lg:h-full lg:w-full"
                 />
               </div>
               <div className="mt-2 flex justify-between">
                 <div>
-                  <h3 className="text-sm text-slate-100 md:text-base md:pl-1">
+                  <h3 className="text-sm text-slate-100 md:pl-1">
                     <p>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {pelicula.title}
                     </p>
                   </h3>
                 </div>
-                  <p className="text-sm font-medium text-slate-100 text-right md:text-base pr-2">{pelicula.adult ? "+18" : "ATP"}</p>
+                  <p className="text-sm font-medium text-slate-100 text-right pr-2">{pelicula.adult ? "+18" : "ATP"}</p>
               </div>
             </div>
           ))}
