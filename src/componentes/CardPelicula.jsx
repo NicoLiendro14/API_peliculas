@@ -21,7 +21,6 @@ export default function CardPelicula() {
 
   function cambiarPagina(valor) {
     if (pagina + valor <= 0) {
-      /* Aca puede ir un modal o simplemente desactivar el boton */
       console.log("No hay paginas anteriores")
     }
     if (pagina + valor >= 1 && pagina + valor <= 94) {
