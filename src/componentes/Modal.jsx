@@ -2,12 +2,51 @@ import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { StarIcon } from '@heroicons/react/20/solid'
+import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { db } from '../firebaseConfig/firebase'
+import Swal from 'sweetalert2'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Modal({ abrirModal, setOpen, contenidoPelicula }) {
+
+  const favoritosCollection = collection(db, "favoritos")
+
+  const alertaCreacion = ( msj , icon) => {
+    Swal.fire({
+      position: 'center',
+      icon: icon,
+      title: msj,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  const existePelicula = async () => {
+    const peliculas = []
+    const data = await getDocs(favoritosCollection);
+    data.docs.map((doc) => peliculas.push({ ...doc.data()}))
+    let found = peliculas.findIndex( pelicula => pelicula.id === contenidoPelicula.id)
+
+    return found;
+  }
+
+  const nuevo = async (e) => {
+    e.preventDefault()
+    let agregar = await existePelicula()
+    if(agregar === -1){
+      await addDoc(favoritosCollection, { img: contenidoPelicula.poster_path, titulo: contenidoPelicula.original_title, estreno: contenidoPelicula.release_date, adultos: contenidoPelicula.adult, puntuacion: contenidoPelicula.vote_average, id: contenidoPelicula.id })
+      alertaCreacion("Añadida a favoritos", "success")
+      e.target.disabled = true
+      e.target.innerText = "Añadido a favoritos"
+      e.target.classList.remove("hover:bg-indigo-700")
+      e.target.classList.replace("bg-indigo-600", "bg-gray-700")
+    }else{
+      alertaCreacion("Esta pelicula ya se añadio a favoritos", "info")
+    }
+  }
 
   return (
     <Transition.Root show={abrirModal} as={Fragment}>
@@ -87,7 +126,12 @@ export default function Modal({ abrirModal, setOpen, contenidoPelicula }) {
                       </section>
                       <section aria-labelledby="options-heading" className="mt-10">
                         <form>
-                          <button type="submit" className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                          <button type="submit" className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            onClick={(e) => {
+                              nuevo(e);
+                            }
+                            }
+                          >
                             Añadir a favoritos
                           </button>
                         </form>

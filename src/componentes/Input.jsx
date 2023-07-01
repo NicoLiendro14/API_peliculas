@@ -1,8 +1,10 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 
-export default function Input({ setBuscador }) {
+export default function Input() {
     let valorInput = useRef("");
+    let navigate = useNavigate();
 
     function cambiarValor(e) {
         valorInput.current = e.target.value;
@@ -10,10 +12,9 @@ export default function Input({ setBuscador }) {
 
     const obtenerValor = (event) => {
         if (event.key === 'Enter') {
-            console.log(valorInput.current)
             let pelicula = transformarAQuery(valorInput.current)
-            setBuscador(pelicula)
             event.target.value = ""
+            navigate(`${pelicula}`)
         }
     }
 
