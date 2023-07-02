@@ -1,18 +1,22 @@
 import './App.css';
-import CardPelicula from './componentes/CardPelicula'
 import Navbar from './componentes/Navbar'
-import HeroSlider from './componentes/HeroSlider';
-import { PeliculasUpcoming } from './componentes/PeliculasUpcoming';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './componentes/Home';
+import { Favoritos } from './componentes/Favoritos';
+import { PeliculasBuscadas } from './componentes/PeliculasBuscadas';
+import { Footer } from './componentes/Footer';
 
 function App() {
 
   return (
-    <div>
-    <Navbar />
-    <HeroSlider />
-    <CardPelicula />
-    <PeliculasUpcoming url="https://api.themoviedb.org/3/movie/upcoming?api_key=2a765e8f852998a076d69380c3d13494&language=en-US&page=1" seccion={"Proximos Estrenos"}/>
-    <PeliculasUpcoming url="https://api.themoviedb.org/3/movie/popular?api_key=2a765e8f852998a076d69380c3d13494&language=en-US&page=1" seccion={"Mas populares"}/>
+    <div className='bg-slate-800'>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/favoritos' element={<Favoritos />} />
+        <Route path='/:id' element={<PeliculasBuscadas />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
