@@ -1,7 +1,6 @@
 import { BsInstagram, BsGithub } from 'react-icons/bs';
 import { AiOutlineLinkedin } from 'react-icons/ai';
 
-/* Poner display flex, columna mobile, fila md, lg, xl, etc, space around, items center, colores posibles  */
 export function Footer() {
     return (
         <div className='bg-slate-900 h-44 md:h-36 pb-5 flex flex-col items-center justify-end'>
