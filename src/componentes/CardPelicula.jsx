@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getPeliculas2 } from "../servicios/getPeliculas";
+import Swal from 'sweetalert2'
 import Pagination from './Paginacion'
 import Modal from './Modal'
 
@@ -21,7 +22,7 @@ export default function CardPelicula() {
 
   function cambiarPagina(valor) {
     if (pagina + valor <= 0) {
-      console.log("No hay paginas anteriores")
+      Swal.fire('No hay peliculas anteriores')
     }
     if (pagina + valor >= 1 && pagina + valor <= 94) {
       setPagina(pagina + valor)
