@@ -5,7 +5,9 @@
 ## Instrucciones 
 
  *- Para buscar una pelicula ingresa el nombre de la pelicula en el input y presiona la tecla enter.* 
+ 
  *- Para ir a tus favoritos presiona en el icono de perfil y selecciona la opcion favoritos.*
+ 
  *- Para ver las peliculas que se encuentran en el slider o los carrusel puede seleccionar los puntos que se encuentran debajo o mantener apretado click izquierdo y arrastrar el mouse hacia la izquierda o derecha.*
 
 ## Pre-requisitos
