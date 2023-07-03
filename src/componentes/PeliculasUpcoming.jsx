@@ -72,7 +72,7 @@ export function PeliculasUpcoming ( { url, seccion } ) {
           </div>
             ))
             :
-            <div>Cargando...</div>
+            <div className="text-slate-50">Cargando...</div>
           }
         </Slider>
         <Modal

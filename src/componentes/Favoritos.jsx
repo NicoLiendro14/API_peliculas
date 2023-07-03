@@ -52,7 +52,8 @@ export function Favoritos() {
         <div className=" min-w-fit max-w-4xl mx-auto py-6">
             <h1 className="text-xl text-slate-50 font-serif font-medium tracking-wide pb-1 px-1 md:text-2xl lg:text-3xl lg:py-3 xl:text-4xl ml-5">Tus peliculas favoritas</h1>
             <ul role="list" className="divide-y divide-gray-100">
-                {peliculasFavoritas?.map((pelicula) => (
+                {peliculasFavoritas?
+                    peliculasFavoritas.map((pelicula) => (
                     <li key={pelicula.id} className="flex justify-between gap-x-6 py-3">
                         <div className="flex gap-x-4 ml-5">
                             <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={`https://image.tmdb.org/t/p/original${pelicula.img}`} alt="img-poster" />
@@ -82,7 +83,9 @@ export function Favoritos() {
 
                         </div>
                     </li>
-                ))}
+                )) :
+                <div className="text-slate-50">cargando...</div>
+                }
             </ul>
         </div>
     )

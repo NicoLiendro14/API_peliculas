@@ -27,11 +27,11 @@ export default function HeroSlider() {
                     peliculasTop.map(pelicula => (
                         <div key={pelicula.id}>
                             <h2 className="absolute px-4 py-4 sm:text-base text-yellow-200 md:text-3xl md:px-7 md:py-6 lg:text-4xl lg:px-8 lg:py-7 font-serif font-bold">{pelicula.original_title}</h2>
-                            <img className="w-full px-1 my-0 mx-auto altura-img rounded-xl" src={`https://image.tmdb.org/t/p/original${pelicula.backdrop_path}`} alt="img-slider" />
+                            <img className="w-full altura-img" src={`https://image.tmdb.org/t/p/original${pelicula.backdrop_path}`} alt="img-slider" />
                         </div>
                     ))
                     :
-                    <div>
+                    <div className="text-slate-50">
                         Cargando...
                     </div>
                 }
