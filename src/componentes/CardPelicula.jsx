@@ -31,7 +31,7 @@ export default function CardPelicula() {
 
   return (
     <div className="bg-slate-800">
-      <div className="mx-auto px-1 py-3 xl:max-w-7xl xl:px-8">
+      <div className="mx-auto px-2 py-3 xl:max-w-7xl xl:px-8">
         <p className="text-xl text-slate-50 font-serif font-medium tracking-wide pb-1 px-1 md:text-2xl lg:text-3xl lg:py-3 xl:text-4xl">Peliculas favoritas</p>
         <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-5 sm:grid-cols-2 md:grid-cols-3 md:gap-x-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-7">
           {peliculas.results?

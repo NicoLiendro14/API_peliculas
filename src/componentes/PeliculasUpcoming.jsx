@@ -59,7 +59,7 @@ export function PeliculasUpcoming ( { url, seccion } ) {
   return (
       <div className="bg-slate-800">
         <h2 className="text-xl mx-auto px-2 pt-1 sm:px-2 sm:py-1 text-slate-50 font-serif font-medium tracking-wide md:pt-2 md:text-2xl lg:text-3xl lg:pt-4 xl:text-4xl xl:max-w-7xl xl:px-8"> {seccion}</h2>
-        <Slider className="mx-auto px-1 py-1 xl:max-w-7xl xl:px-8" {...settings}>
+        <Slider className="mx-auto px-2 py-1 xl:max-w-7xl xl:px-8" {...settings}>
           {
             peliculas?
             peliculas.map( (peli) => (
