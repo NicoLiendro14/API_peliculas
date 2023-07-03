@@ -18,7 +18,7 @@ export function PeliculasBuscadas() {
     return (
         <div className=" min-w-fit max-w-4xl mx-auto py-">
         <h1 className="text-xl text-slate-50 font-serif font-medium tracking-wide pb-1 px-1 md:text-2xl lg:text-3xl lg:py-3 xl:text-4xl ml-5">Resultados de la busqueda</h1>
-        <ul role="list" className="divide-y divide-gray-100">
+        <ul className="divide-y divide-gray-100">
             {arrayPeliculas?
             arrayPeliculas.map((pelicula) => (
                 <li key={pelicula.id} className="flex justify-between gap-x-6 py-3">
