@@ -12,7 +12,7 @@ export function PeliculasUpcoming ( { url, seccion } ) {
     getPeliculas2(url).then(
       response => setPeliculas(response.results)
     )
-  },[])
+  },[url])
 
   const settings = {
     dots: true,

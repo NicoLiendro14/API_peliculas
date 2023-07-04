@@ -39,7 +39,7 @@ export function Favoritos() {
 
     useEffect(() => {
         getPeliculasFavoritas();
-    }, [])
+    }, [getPeliculasFavoritas])
 
     const borrarPeliculaFavorita = async (id) => {
         const pelicula = doc(db, "favoritos", id)
