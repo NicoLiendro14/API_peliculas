@@ -3,16 +3,14 @@ import Slider from "react-slick";
 import { getPeliculas2 } from "../servicios/getPeliculas";
 import Modal from "./Modal";
 
-export function PeliculasUpcoming ( { url, seccion } ) {
-  let [peliculas, setPeliculas] = useState([])
-  let [abrirModal, setAbrirModal] = useState(false)
-  let [modal, setModal] = useState({})
-  
-  useEffect( () => {
-    getPeliculas2(url).then(
-      response => setPeliculas(response.results)
-    )
-  },[url])
+export function PeliculasUpcoming({ url, seccion }) {
+  let [peliculas, setPeliculas] = useState([]);
+  let [abrirModal, setAbrirModal] = useState(false);
+  let [modal, setModal] = useState({});
+
+  useEffect(() => {
+    getPeliculas2(url).then((response) => setPeliculas(response.results));
+  }, [url]);
 
   const settings = {
     dots: true,
